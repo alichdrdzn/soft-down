@@ -43,7 +43,7 @@ iptables -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 17971 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 8443 -j ACCEPT
 iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
-iptables -P INPUT DROP
+iptables -P INPUT ACCEPT
 service netfilter-persistent save
 netfilter-persistent save
 echo -e "\ndone."
