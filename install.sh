@@ -33,7 +33,6 @@ sed -i "s/${upass}/upass/g" /root/vpnserver/commands.txt 1>/dev/null
 sed -i "s/${pskey}/pskey/g" /root/vpnserver/commands.txt 1>/dev/null
 netstat -ntpl
 echo "@reboot /root/vpnserver/vpnserver start" >> /var/spool/cron/crontabs/root
-echo "Port 17971" >> /etc/ssh/sshd_config
 iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT
 iptables -A INPUT -s localhost -j ACCEPT
 iptables -A INPUT -p icmp -j ACCEPT
@@ -47,4 +46,3 @@ iptables -P INPUT ACCEPT
 service netfilter-persistent save
 netfilter-persistent save
 echo -e "\ndone."
-systemctl restart sshd
