@@ -15,7 +15,7 @@ Certificate Installation
 -------------------------------
 >You need a domain for this
 
-Connect to the server using port 17971. and install certbot:
+Connect to the server using port 22. and install certbot:
 ```
 sudo snap install --classic certbot
 ```
